@@ -3,7 +3,7 @@ import { fastify } from 'fastify'
 const server = fastify() 
 
 server.get('/', () => {
-  return 'Hello World'
+  return 'Welcome to Instagram'
 })
 
 server.listen({
