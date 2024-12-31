@@ -1,0 +1,9 @@
+POST http://localhost:3333/post
+Content-Type: application/json
+
+{
+  "description": "Love",
+  "account": "Joel Fernandes",
+  "tagged": "Susana",
+  "location": "Bucelas"
+}

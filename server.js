@@ -1,9 +1,21 @@
 import { fastify } from 'fastify'
+import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify() 
+const database = DatabaseMemory
 
-server.get('/', () => {
-  return 'Welcome to Instagram'
+server.post('/post', (request, reply) => {
+
+  const { description, location, tagged, account} = request.body
+
+  database.create({
+    description,
+    location,
+    tagged,
+    account
+  })
+
+  return reply.status(201).send()
 })
 
 server.listen({
