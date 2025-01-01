@@ -2,7 +2,7 @@ import { fastify } from 'fastify'
 import { DatabaseMemory } from './database-memory.js'
 
 const server = fastify() 
-const database = DatabaseMemory
+const database = new DatabaseMemory() // Important (new)
 
 server.post('/post', (request, reply) => {
 
